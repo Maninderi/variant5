@@ -9,17 +9,17 @@
     <Grid>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="300">
             <MenuItem Header="Input" Name="miInput" Click="miInput_Click" />
-            <MenuItem Header="Calc" Name="miCalc" Click="miCalc_Click" />
+            <MenuItem Header="Calc" Name="miCalc" Click="miCalc_Click" IsEnabled="False"/>
             <MenuItem Header="About" Name="miAbout" Click="MenuItem_Click" />
             <MenuItem Header="Exit" Name="miExit" Click="miExit_Click"/>
         </Menu>
-        <WrapPanel Name="wrapPanel" Orientation="Vertical" Margin="275,100,275,50" Width="245" Background="DarkGray" Visibility="Visible">
-                <TextBox Text="Number 1" Name="num1" Margin="10,10,100,10" TextChanged="num1_TextChanged"/>
-                <TextBox Text="Number 2" Name="num2" Margin="10,10,100,10"/>
-                <TextBox Text="Number 3" Name="num3" Margin="10,10,100,10"/>
+        <WrapPanel Name="wrapPanel" Orientation="Vertical" Margin="275,100,275,50" Width="245" Background="DarkGray" Visibility="Hidden">
+                <TextBox Name="num1" Margin="10,10,100,10" TextChanged="TextBox_TextChanged" ToolTip="Введите первое число"/>
+                <TextBox Name="num2" Margin="10,10,100,10" TextChanged="TextBox_TextChanged" ToolTip="Введите второе число"/>
+                <TextBox Name="num3" Margin="10,10,100,10" TextChanged="TextBox_TextChanged" ToolTip="Введите третье число"/>
                 <CheckBox Content="Summ" Name="c1" Margin="10,10,100,10"/>
                 <CheckBox Content="Least multiple" Name="c2" Margin="10,10,100,10"/>
-                <Button Content="Решить" Margin="10,10,100,10" Click="Button_Click"/>
+                <Button Content="Решить" Name="Button_Result" Margin="10,10,100,10" Click="Button_Click" IsEnabled="False"/>
             </WrapPanel>
     </Grid>
 </Window>
